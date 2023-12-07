@@ -12,23 +12,31 @@ document.getElementById('voteForm').addEventListener('submit', function(event) {
     const url = '../php/send_data.php'; // Replace with your server endpoint
 
     const formData = new FormData(); // Create FormData object to send data
-    formData.append('ip_address', '111111'); // Function to get user's IP address
+    formData.append('ip_address', ''); // Function to get user's IP address
     formData.append('vote', clickedButton === 'yesBtn' ? 'yes' : 'no'); // Vote type based on the clicked button
 
     fetch(url, {
             method: 'POST',
             body: formData
         })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+        .then(response => response.json())
+        .then(data => {
+            // Check the response message
+            if (data.message === "Invalid vote") {
+                // Display the message in your HTML
+                document.getElementById('voteMessage').innerText = data.message;
+                document.getElementById('voteMessage').style.color = 'red';
+                fetchVotesFromServer();
+            } else {
+
+                document.getElementById('voteMessage').innerText = data.message;
+                document.getElementById('voteMessage').style.color = 'green';
+                fetchVotesFromServer();
+                // Handle other responses or actions here
             }
-            console.log('Vote sent successfully!');
-            fetchVotesFromServer(); // Fetch updated votes after sending new data
         })
         .catch(error => {
-            console.error('There was a problem sending the vote:', error);
-            // Handle errors or inform the user of the failure
+            console.error('Error:', error);
         });
 });
 

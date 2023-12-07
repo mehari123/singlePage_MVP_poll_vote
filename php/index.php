@@ -118,6 +118,7 @@
                                         <div class="label-percent" id="label2"></div>
                                     </div>
                                 </div>
+                                <div id ="voteMessage"></div>
                                 <div class="total">
                                     <h3>total votes</h3>
                                     <div id="total-votes"></div>

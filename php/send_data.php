@@ -12,27 +12,42 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-// Create the 'votes' table if it doesn't exist
-// $sql = "CREATE TABLE IF NOT EXISTS votes (
-//     id INT AUTO_INCREMENT PRIMARY KEY,
-//     ip_address VARCHAR(255),
-//     vote_type VARCHAR(3)
-// )";
-// if ($conn->query($sql) !== TRUE) {
-//     echo "Error creating table: " . $conn->error;
-// }
+// Your existing code here for database connection
 
 // Check if 'vote' is set and valid, then insert data
 if (isset($_POST['vote']) && ($_POST['vote'] === 'yes' || $_POST['vote'] === 'no')) {
-    $ipAddress = $_POST['ip_address']; // Assuming the IP address is sent via POST
-    $voteType = $_POST['vote'];
+    $ipAddress = $_SERVER['REMOTE_ADDR']; // Fetch the user's IP address
 
-    // Prepare and execute the SQL statement to insert the vote along with IP
-    $stmt = $conn->prepare('INSERT INTO votes (ip, types) VALUES (?, ?)');
-    $stmt->bind_param('ss', $ipAddress, $voteType); // Assuming both are strings ('s' represents string)
+    // Check if the IP address already exists in the votes table
+    $stmt = $conn->prepare('SELECT * FROM votes WHERE ip = ?');
+    $stmt->bind_param('s', $ipAddress); // Assuming IP is a string ('s' represents string)
     $stmt->execute();
-    $stmt->close();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // If the IP address exists, send a message indicating the user has already voted
+        $response = array("message" => "You have already voted.");
+    } else {
+        // If the IP address doesn't exist, insert the new vote along with the IP
+        $voteType = $_POST['vote'];
+
+        $stmt = $conn->prepare('INSERT INTO votes (ip, types) VALUES (?, ?)');
+        $stmt->bind_param('ss', $ipAddress, $voteType); // Assuming both are strings ('s' represents string)
+        $stmt->execute();
+        $stmt->close();
+
+        // Send a message indicating successful voting
+        $response = array("message" => "Thank you for voting!");
+    }
+
+    // Return the response as JSON to the AJAX call
+    header('Content-Type: application/json');
+    echo json_encode($response);
+} else {
+    // If 'vote' is not set or not valid, send an error response
+    $response = array("message" => "Invalid vote");
+    header('Content-Type: application/json');
+    echo json_encode($response);
 }
 
 $conn->close();
