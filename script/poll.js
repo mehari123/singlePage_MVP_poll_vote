@@ -67,12 +67,12 @@ function updateVoteCounts(yesVotes, noVotes) {
     const yesBar = document.querySelector('.bar[data-choice="1"]');
     const noBar = document.querySelector('.bar[data-choice="2"]');
 
-    yesBar.style.height = `${yesPercentage}%`;
-    noBar.style.height = `${noPercentage}%`;
+    yesBar.style.width = `${yesPercentage}%`;
+    noBar.style.width = `${noPercentage}%`;
     console.log(yesPercentage, noPercentage, "here also");
 
-    document.getElementById('lable1').innerHTML = `<span>${yesPercentage.toFixed(2)}%</span>`;
-    document.getElementById('lable2').innerHTML = `<span>${noPercentage.toFixed(2)}%</span>`;
+    document.getElementById('label1').innerHTML = `<span>${yesPercentage.toFixed(2)}%</span>`;
+    document.getElementById('label2').innerHTML = `<span>${noPercentage.toFixed(2)}%</span>`;
 }
 
 

@@ -98,31 +98,31 @@
                 <div class="fan-poll">
                     <h1>Fan Vote Poll</h1>
                     <div class="poll-content">
-                 <form id="voteForm" method="post">
-                    <div id="choices">
-                        <div class="choice">
-                            <div class="result">
-                                <div class="bar" data-choice="1"></div>
+                        <form id="voteForm" method="post">
+                            <div id="choices">
+                                <div class="choice">
+                                    <div class="label">
+                                        <button id="yesBtn" type="submit">Yes</button>
+                                        <div class="result">
+                                            <div class="bar" data-choice="1"></div>
+                                        </div>
+                                        <div class="label-percent" id="label1"></div>
+                                    </div>
+                                </div>
+                                <div class="choice">
+                                    <div class="label">
+                                        <button id="noBtn" type="submit">No</button>
+                                        <div class="result">
+                                            <div class="bar" data-choice="2"></div>
+                                        </div>
+                                        <div class="label-percent" id="label2"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="label">
-                                <div id="lable1"></div>
-                                <button id="yesBtn" type="submit" >Yes</button>
-                            </div>
-                        </div>
-                        <div class="choice">
-                            <div class="result">
-                                <div class="bar" data-choice="2"></div>
-                            </div>
-                            <div class="label">
-                                <div id="lable2"></div>
-                                <button id="noBtn" type="submit">No</button>
-                            </div>
-                        </div>
+                        </form>       
                     </div>
-                </form>
-                       
-            </div>
-                    <!-- <img src="i22.jpg"></img> --
+                </div>
+                 <!-- <img src="i22.jpg"></img>  -->
 
 
                 <div class="testimonials">
@@ -133,7 +133,6 @@
                 </div>
                
             </div>
-        </div>
         
         <!-- Insert Google AdSense ad -->
         
