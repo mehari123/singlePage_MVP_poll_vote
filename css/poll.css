@@ -1,0 +1,70 @@
+.choice {
+    height: 400px;
+    display: inline-block;
+    width: 100px;
+}
+
+.result {
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.bar {
+    height: 0%;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.bar[data-choice="1"] {
+    background-color: rgb(15, 118, 1);
+}
+
+.bar[data-choice="2"] {
+    background-color: rgb(255, 2, 2)
+}
+
+.label {
+    height: 70px;
+    text-align: center;
+}
+
+
+/* Styles for yesBtn */
+
+#yesBtn {
+    background-color: green;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    /* Adjust margin as needed */
+}
+
+
+/* Styles for noBtn */
+
+#noBtn {
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    /* Adjust margin as needed */
+}
+
+#lable1,
+#lable2 {
+    font-size: 24px;
+    color: blue;
+    /* Adjust color as needed */
+    margin-right: 20px;
+    /* Adjust margin as needed */
+}
