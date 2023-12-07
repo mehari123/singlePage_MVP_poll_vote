@@ -73,6 +73,7 @@ function updateVoteCounts(yesVotes, noVotes) {
 
     document.getElementById('label1').innerHTML = `<span>${yesPercentage.toFixed(2)}%</span>`;
     document.getElementById('label2').innerHTML = `<span>${noPercentage.toFixed(2)}%</span>`;
+    document.getElementById("total-votes").innerHTML = `<span>${totalVotes}</span>`;
 }
 
 
