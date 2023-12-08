@@ -18,20 +18,7 @@
         <a href="#footer-section">Footer</a>
     </div>
 
-        <div class="ad">
-            <!-- Replace this comment with your Google AdSense code -->
-            <!-- Example code -->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Replace this placeholder div with your AdSense ad code -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-xxxxxxxxxx"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
+      
     <div class="container">
         <!-- First Row: Slider -->
         <div class="row row1" id= " slider-section">
@@ -49,7 +36,58 @@
         
         <!-- Second Row: Statistics and Fan Vote Poll -->
         <div class="row row2">
-            <div class="column1">
+            
+            <div class="column2">
+                <div class="fan-poll">
+                    <h1>Fan Vote Poll</h1>
+                    <div class="poll-content">
+                        <form id="voteForm" method="post">
+                            <div id="choices">
+                                <div class="choice">
+                                    <div class="label">
+                                        <button id="yesBtn" type="submit">Yes</button>
+                                        <div class="result">
+                                            <div class="bar" data-choice="1"></div>
+                                        </div>
+                                        <div class="label-percent" id="label1"></div>
+                                    </div>
+                                </div>
+                                <div class="choice">
+                                    <div class="label">
+                                        <button id="noBtn" type="submit">No</button>
+                                        <div class="result">
+                                            <div class="bar" data-choice="2"></div>
+                                        </div>
+                                        <div class="label-percent" id="label2"></div>
+                                    </div>
+                                </div>
+                                <div id ="voteMessage"></div>
+                                <div class="total">
+                                    <h3>total votes</h3>
+                                    <div id="total-votes"></div>
+                                </div>
+                            </div>
+                        </form>       
+                    </div>
+                </div>
+                <div class="ad">
+                    <!-- Replace this comment with your Google AdSense code -->
+                    <!-- Example code -->
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Replace this placeholder div with your AdSense ad code -->
+                    <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-xxxxxxxxxx"
+                        data-ad-slot="1234567890"
+                        data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+                 <!-- <img src="i22.jpg"></img>  -->
+
+                 <div class="column1">
                 
                 <div class="statistics" id = "statistics-section">
                 <div><img src="../media/i33.jpg"></img></div>
@@ -87,57 +125,22 @@
                             <span>- Sports Journalist PQR</span>
                         </div>
                     </div>
+                    </div>
+
+                    <div class="testimonials">
+                        <!-- Testimonials content goes here -->
+                        <h1>Tweet (x) feed</h1>
+                        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Loyal, Forever, True. <a href="https://t.co/mjKibAdk5c">pic.twitter.com/mjKibAdk5c</a></p>&mdash; Brock Purdy (@brockpurdy13) <a href="https://twitter.com/brockpurdy13/status/1479965438285070336?ref_src=twsrc%5Etfw">January 8, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <!-- Add testimonials content -->
+                    </div>
+
+                    </div>
                 </div>
 
 
                 
 
-            </div>
-
-            <div class="column2">
-                <div class="fan-poll">
-                    <h1>Fan Vote Poll</h1>
-                    <div class="poll-content">
-                        <form id="voteForm" method="post">
-                            <div id="choices">
-                                <div class="choice">
-                                    <div class="label">
-                                        <button id="yesBtn" type="submit">Yes</button>
-                                        <div class="result">
-                                            <div class="bar" data-choice="1"></div>
-                                        </div>
-                                        <div class="label-percent" id="label1"></div>
-                                    </div>
-                                </div>
-                                <div class="choice">
-                                    <div class="label">
-                                        <button id="noBtn" type="submit">No</button>
-                                        <div class="result">
-                                            <div class="bar" data-choice="2"></div>
-                                        </div>
-                                        <div class="label-percent" id="label2"></div>
-                                    </div>
-                                </div>
-                                <div id ="voteMessage"></div>
-                                <div class="total">
-                                    <h3>total votes</h3>
-                                    <div id="total-votes"></div>
-                                </div>
-                            </div>
-                        </form>       
-                    </div>
-                </div>
-                 <!-- <img src="i22.jpg"></img>  -->
-
-
-                <div class="testimonials">
-                    <!-- Testimonials content goes here -->
-                    <h1>Tweet (x) feed</h1>
-                    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Loyal, Forever, True. <a href="https://t.co/mjKibAdk5c">pic.twitter.com/mjKibAdk5c</a></p>&mdash; Brock Purdy (@brockpurdy13) <a href="https://twitter.com/brockpurdy13/status/1479965438285070336?ref_src=twsrc%5Etfw">January 8, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    <!-- Add testimonials content -->
-                </div>
-               
-            </div>
+           
         
         <!-- Insert Google AdSense ad -->
         

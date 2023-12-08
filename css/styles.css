@@ -80,7 +80,7 @@ body {
 
 .row.row2 {
     display: grid;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 25% 75%;
     /* You can adjust the background color or image here */
     background-color: white;
     background-size: cover;
@@ -90,12 +90,13 @@ body {
 
 /* Second Row - Columns */
 
-.column1,
+
+/* .column1,
 .column2 {
     flex: 1;
     display: flex;
     flex-direction: column;
-}
+} */
 
 
 /* Second Row - Statistics and Fan Vote Poll */
